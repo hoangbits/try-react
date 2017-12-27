@@ -5,12 +5,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 function tick() {
-    const element = (
-        <div>
-            <h1>Hello, Mason</h1>
-            <h2>It is {new Date().toLocaleTimeString()}</h2>
-        </div>
-    );
+    const element = <h2>It is {new Date().toLocaleTimeString()}</h2>;
     ReactDOM.render(element, document.getElementById('root'));
 }
 
