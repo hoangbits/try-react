@@ -4,16 +4,22 @@ import './index.css';
 import Comment from './Comment';
 import registerServiceWorker from './registerServiceWorker';
 
-const comment = {
-    date: new Date(),
-    text: 'I hope you enjoy learning React',
-    author: {
-        name: 'Hello Kitty',
-        avatarUrl:
-            'http://placekitten.com/g/64/64',
-
-    }
+function Clock(props) {
+    return (
+        <div>
+            <h1>Hi, manson</h1>
+            <h2>It is {props.date.toLocaleTimeString()}.</h2>
+        </div>
+    );
 }
-ReactDOM.render(<Comment date={comment.date} author={comment.author} text={comment.text} />, document.getElementById('root'));
+
+function tick() {
+    ReactDOM.render(
+        <Clock date={new Date()} />,
+        document.getElementById('root')
+    );
+}
+
+setInterval(tick, 1000);
 
 registerServiceWorker();
